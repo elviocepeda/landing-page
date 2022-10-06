@@ -1,0 +1,91 @@
+.container {
+  font-family: "Hoefler Text";
+  width: 60%;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+
+.paragraph {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.input {
+  color: var(--text-color);
+  width: 100%;
+  height: 3rem;
+}
+
+.input_textarea {
+  color: var(--text-color);
+  width: 100%;
+  height: 5rem;
+  grid-column: 1/3;
+}
+
+.input:focus,
+.input_textarea:focus {
+  outline: none;
+}
+
+.radio_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  height: 3rem;
+  font-family: "Roboto";
+}
+
+.radio_container div {
+  display: flex;
+}
+
+.radio {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 1rem;
+  color: var(--primary-color);
+}
+
+.radio_paragraph {
+  text-align: start;
+  color: var(--secondary-text-color);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.input_submit_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  grid-column: 1/3;
+  margin-top: 1rem;
+}
+
+.input_submit {
+  font-family: "Hoefler Text";
+  font-size: 1.2rem;
+  border-style: none;
+  width: 8.5rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+}

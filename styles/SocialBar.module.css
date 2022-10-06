@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 40vh;
+  right: 2.5rem;
+}
+
+.img {
+  background-color: var(--white);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--primary-color);
+}

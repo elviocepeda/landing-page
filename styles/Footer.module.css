@@ -1,0 +1,20 @@
+.container {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 2.5rem 4rem;
+  }
+  
+  .container_div {
+    width: 10rem;
+    font-size: 0.9rem;
+    font-size-adjust: 0.5;
+  }
+  
+  .span {
+    font-weight: 600;
+  }
+  
