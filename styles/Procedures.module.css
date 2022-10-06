@@ -1,0 +1,132 @@
+.contact_us_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_us_img {
+  width: 47rem;
+  height: 53rem;
+  background-image: url("../images/tramites-contactus.png");
+  background-size: cover;
+}
+
+.procedure {
+  width: 100%;
+  padding: 0 10rem 0 4rem;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 5rem;
+  padding-bottom: 2rem;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  padding-bottom: 2rem;
+}
+
+.button {
+  color: var(--white);
+  background-color: var(--primary-color);
+  font-family: "Hoefler Text";
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-style: none;
+  line-height: 0.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.h_linebar {
+  position: absolute;
+  width: 32rem;
+  height: 1.2rem;
+  bottom: -0.5rem;
+  background-color: var(--primary-color);
+}
+
+.small_title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+}
+
+.slider_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8.5rem 0 2.5rem 0;
+}
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slider_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider_paragraph {
+  width: 34rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  letter-spacing: 0.7px;
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.slider_img_container {
+  position: relative;
+}
+
+.slider_img {
+  width: 38rem;
+  height: 24rem;
+  background-image: url("../images/tramites-slider.png");
+  background-size: cover;
+}
+
+.slider_h_linebar {
+  position: absolute;
+  width: 32rem;
+  height: 1.2rem;
+  top: -0.5rem;
+  left: 3rem;
+  background-color: var(--primary-color);
+}
+
+.slider_btn {
+  display: flex;
+  justify-content: center;
+  width: 18rem;
+}
+
+.slider_btn_left,
+.slider_btn_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+}
