@@ -21,26 +21,42 @@
 
 .paragraph {
   color: var(--primary-color);
-  font-size: 1.2rem;
   font-weight: 400;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
-.input {
+.paragraph_error {
+  color: var(--error);
+  font-weight: 400;
+  margin-top: 0.3rem;
+  grid-column: 1/3;
+}
+
+.paragraph_success {
+  color: var(--success);
+  font-weight: 400;
+  margin-top: 0.3rem;
+  grid-column: 1/3;
+}
+
+.input,
+.select {
   color: var(--text-color);
   width: 100%;
   height: 3rem;
+  padding: 0.5rem;
 }
 
 .input_textarea {
   color: var(--text-color);
-  width: 100%;
-  height: 5rem;
+  max-width: 100%;
   grid-column: 1/3;
+  padding: 0.5rem;
 }
 
 .input:focus,
-.input_textarea:focus {
+.input_textarea:focus,
+.select:focus {
   outline: none;
 }
 
@@ -53,21 +69,18 @@
   font-family: "Roboto";
 }
 
-.radio_container div {
+.radio_container_div {
   display: flex;
+  align-items: center;
 }
 
 .radio {
-  display: flex;
-  justify-content: flex-start;
   margin-right: 1rem;
-  color: var(--primary-color);
 }
 
 .radio_paragraph {
-  text-align: start;
   color: var(--secondary-text-color);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -88,4 +101,84 @@
   border-radius: 0.2rem;
   color: var(--white);
   background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input_textarea {
+    height: 8rem;
+  }
+
+  .radio_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .radio_container_div {
+    padding: 0.5rem 0;
+    height: auto;
+  }
+
+  .custom_radio {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 1rem;
+  }
+
+  .input_submit_container {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 4rem;
+  }
+
+  .title {
+    margin: 2rem 0;
+    font-size: 4rem;
+  }
+
+  .input {
+    margin-bottom: 0.5rem;
+  }
+
+  .input_textarea {
+    margin-bottom: 0.5rem;
+  }
+
+  .input_submit {
+    font-family: "Hoefler Text";
+    font-size: 1.4rem;
+    border-style: none;
+    width: 9rem;
+    height: 3.5rem;
+    border-radius: 0.2rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+  }
 }

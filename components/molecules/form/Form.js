@@ -1,115 +1,143 @@
-import { useState } from "react";
-import { Input, Paragraph, Title } from "../../atoms";
+import { Paragraph, Title } from "../../atoms";
 import styles from "../../../styles/Form.module.css";
-
-const initialForm = {
-  name: "",
-  phone: "",
-  email: "",
-  companyName: "",
-  contactType: "",
-  requeriment: "",
-  comment: "",
-};
+import schema from "./schema";
+import emailjs from "@emailjs/browser";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { useRef, useState } from "react";
+import { emailCredentials } from "./constants";
+import { deficoText } from "../../../common/constants";
 
 export const Form = () => {
-  const [form, setForm] = useState(initialForm);
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const [emailResponse, setEmailResponse] = useState(null);
+  const form = useRef();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = () => {
+    const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = emailCredentials;
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
+      (result) => {
+        setEmailResponse(result);
+      },
+      (error) => {
+        setEmailResponse(error);
+      }
+    );
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submitted");
-  };
-  console.log(form);
   return (
     <div className={styles.container}>
-      <Title content="Contáctanos" classname={styles.title} />
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <Title content={deficoText.CONTACT_US} classname={styles.title} />
+      <form
+        ref={form}
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div>
-          <Paragraph content="Nombre*" classname={styles.paragraph} />
-          <Input
-            onChange={handleChange}
+          <Paragraph
+            content={deficoText.FORM_NAME_LABEL}
+            classname={styles.paragraph}
+          />
+          <input
             type="text"
-            classname={styles.input}
             name="name"
+            {...register("name")}
+            className={styles.input}
+          />
+          <Paragraph
+            content={errors.name?.message}
+            classname={styles.paragraph_error}
           />
         </div>
         <div>
           <Paragraph
-            content="Teléfono (10 dígitos)*"
+            content={deficoText.FORM_PHONE_LABEL}
             classname={styles.paragraph}
           />
-          <Input
-            onChange={handleChange}
+          <input
             type="text"
-            classname={styles.input}
             name="phone"
+            {...register("phone")}
+            className={styles.input}
+          />
+          <Paragraph
+            content={errors.phone?.message}
+            classname={styles.paragraph_error}
           />
         </div>
         <div>
           <Paragraph
-            content="Correo electrónico*"
+            content={deficoText.FORM_EMAIL_LABEL}
             classname={styles.paragraph}
           />
-          <Input
-            onChange={handleChange}
+          <input
             type="text"
-            classname={styles.input}
             name="email"
+            {...register("email")}
+            className={styles.input}
+          />
+          <Paragraph
+            content={errors.email?.message}
+            classname={styles.paragraph_error}
           />
         </div>
         <div>
           <Paragraph
-            content="¿Cuál es el nombre de tu empresa?"
+            content={deficoText.FORM_COMPANY_LABEL}
             classname={styles.paragraph}
           />
-          <Input
-            onChange={handleChange}
+          <input
             type="text"
-            classname={styles.input}
             name="companyName"
+            {...register("companyName")}
+            className={styles.input}
           />
         </div>
         <div>
           <Paragraph
-            content="¿Cómo prefieres que te contactemos?"
+            content={deficoText.FORM_CONTACTWAY_LABEL}
             classname={styles.paragraph}
           />
           <div className={styles.radio_container}>
             <div className={styles.radio_container_div}>
-              <Input
-                onChange={handleChange}
+              <input
                 type="radio"
-                classname={styles.radio}
                 value="email"
-                name="contactType"
-              />
-              <Paragraph content="Email" classname={styles.radio_paragraph} />
-            </div>
-            <div className={styles.radio_container_div}>
-              <Input
-                onChange={handleChange}
-                type="radio"
-                classname={styles.radio}
-                value="phone"
-                name="contactType"
+                checked={true}
+                {...register("contactWay")}
+                className={styles.radio}
               />
               <Paragraph
-                content="Teléfono"
+                content={deficoText.FORM_RADIO_EMAIL}
                 classname={styles.radio_paragraph}
               />
             </div>
             <div className={styles.radio_container_div}>
-              <Input
-                onChange={handleChange}
+              <input
                 type="radio"
-                classname={styles.radio}
-                value="whatsapp"
-                name="contactType"
+                value="phone"
+                {...register("contactWay")}
+                className={styles.radio}
               />
               <Paragraph
-                content="Whatsapp"
+                content={deficoText.FORM_RADIO_PHONE}
+                classname={styles.radio_paragraph}
+              />
+            </div>
+            <div className={styles.radio_container_div}>
+              <input
+                type="radio"
+                value="whatsapp"
+                {...register("contactWay")}
+                className={styles.radio}
+              />
+              <Paragraph
+                content={deficoText.FORM_RADIO_WHATSAPP}
                 classname={styles.radio_paragraph}
               />
             </div>
@@ -117,24 +145,45 @@ export const Form = () => {
         </div>
         <div>
           <Paragraph
-            content="¿Cuál es tu necesidad?"
+            content={deficoText.FORM_REASON_LABEL}
             classname={styles.paragraph}
           />
-          <Input
-            onChange={handleChange}
-            type="text"
-            value=""
-            classname={styles.input}
-          />
+          <select
+            label="reason"
+            name="reason"
+            {...register("reason")}
+            className={styles.select}
+          >
+            <option value="option1">Opción 1</option>
+            <option value="option2">Opción 2</option>
+            <option value="option3">Opción 3</option>
+            <option value="option4">Opción 4</option>
+          </select>
         </div>
-        <Input
-          onChange={handleChange}
+        <input
           type="textarea"
-          value=""
-          classname={styles.input_textarea}
+          name="message"
+          {...register("message")}
+          className={styles.input_textarea}
         />
+        {emailResponse?.status === 200 && (
+          <Paragraph
+            content={deficoText.FORM_EMAILJS_SUCCESS}
+            classname={styles.paragraph_success}
+          />
+        )}
+        {emailResponse?.status === 400 && (
+          <Paragraph
+            content={deficoText.FORM_EMAILJS_ERROR}
+            classname={styles.paragraph_error}
+          />
+        )}
         <div className={styles.input_submit_container}>
-          <Input type="submit" value="Enviar" classname={styles.input_submit} />
+          <input
+            type="submit"
+            value={deficoText.FORM_SUBMIT}
+            className={styles.input_submit}
+          />
         </div>
       </form>
     </div>

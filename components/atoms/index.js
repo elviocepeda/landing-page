@@ -3,4 +3,4 @@ export { Title } from "./Title";
 export { Paragraph } from "./Paragraph";
 export { Button } from "./Button";
 export { ArrowIcon } from "./ArrowIcon";
-export { Input } from "./Input";
+export { Burger } from "./Burger";

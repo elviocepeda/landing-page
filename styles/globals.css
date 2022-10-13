@@ -1,31 +1,3 @@
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
- */
-
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
 @font-face {
   font-family: "Hoefler Text";
@@ -38,10 +10,23 @@ a {
   box-sizing: border-box;
 }
 
+.info,
+.tramites,
+.servicios,
+.contacto {
+  border-bottom: 0.5rem solid var(--primary-color);
+}
+
+.active_dot {
+  background-color: var(--primary-color);
+}
+
 :root {
   --text-color: #666;
   --secondary-text-color: #919090;
   --primary-color: #306270;
   --secondary-color: #9acbb6;
   --white: #fff;
+  --error: #cc0000;
+  --success: #4bb543;
 }

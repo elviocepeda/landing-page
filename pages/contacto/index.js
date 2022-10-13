@@ -1,4 +1,5 @@
 import React from "react";
+import { deficoText } from "../../common/constants";
 import { Button, Paragraph } from "../../components/atoms";
 import { Form } from "../../components/molecules";
 import { Layout } from "../../components/organisms";
@@ -11,21 +12,29 @@ const Contact = () => {
         <Form />
         <div className={styles.img}>
           <Paragraph
-            content="Estamos cerca de ti,"
+            content={deficoText.CONTACT_PARAGRAPH_PT1}
             classname={styles.paragraph}
           />
           <Paragraph
-            content="para atenderte con calidad y servicio."
+            content={deficoText.CONTACT_PARAGRAPH_PT2}
             classname={styles.paragraph}
           />
         </div>
         <div className={styles.call_us}>
-          <Paragraph content="Llámanos" classname={styles.call_us_paragraph} />
           <Paragraph
-            content="+52 56 103 60 443"
+            content={deficoText.CONTACT_CALL_US}
             classname={styles.call_us_paragraph}
           />
-          <Button content="Enviar un e-mail" classname={styles.btn} />
+          <Paragraph
+            content={deficoText.CONTACT_CALL_US_PHONE}
+            classname={styles.call_us_paragraph}
+          />
+          <a href="#">
+            <Button
+              content={deficoText.CONTACT_SEND_AN_EMAIL}
+              classname={styles.btn}
+            />
+          </a>
         </div>
       </div>
     </Layout>
