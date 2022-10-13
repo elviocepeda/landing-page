@@ -1,112 +1,342 @@
-.contactus_container {
+.contact_us_img {
+  width: 90%;
+  height: 30rem;
+  background-image: url("../images/services-contactus.png");
+  background-size: cover;
+}
+
+.contact_us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 5rem;
+  font-weight: 800;
+  padding-bottom: 2rem;
+}
+
+.paragraph {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 24rem;
+  color: var(--text-color);
+  padding-bottom: 2rem;
+}
+
+.button {
+  color: var(--white);
+  background-color: var(--primary-color);
+  font-family: "Hoefler Text";
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-style: none;
+  line-height: 0.5rem;
+  padding: 1.4rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.h_linebar {
+  width: 32rem;
+  height: 1.2rem;
+  bottom: -0.5rem;
+  background-color: var(--primary-color);
+}
+
+.service_container {
+  display: flex;
+  align-items: center;
+  margin: 6rem 0 10rem 0;
+  height: 37rem;
+  background-color: var(--secondary-color);
+}
+
+.slider_btn {
+  display: flex;
+  justify-content: center;
+  min-width: 5rem;
+  height: 5rem;
+  margin: 0 5rem;
+  cursor: pointer;
+}
+
+.slider_btn_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.service_subtitle {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 5rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+}
+
+.slider_dots {
+  display: none;
+}
+
+.service_paragraph {
+  font-size: 1.2rem;
+  width: 24rem;
+  color: var(--white);
+  line-height: 2rem;
+  letter-spacing: 1px;
+}
+
+.service_img_linebar_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.service_img_container {
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+}
+
+.image {
+  width: 38rem;
+  height: 24rem;
+}
+
+@media screen and (max-width: 767px) {
+  .contact_us_container {
     position: relative;
   }
-  
-  .contactus_img {
-    width: 90%;
-    height: 30rem;
-    background-image: url("../images/services-contactus.png");
-    background-size: cover;
+
+  .contact_us_img {
+    width: 100%;
+    height: 25.5rem;
+    background-image: url("../images/tramites-contactus.png");
   }
-  
-  .contactus {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 4rem;
+
+  .contact_us {
+    margin: 2rem 2rem 0;
   }
-  
+
   .title {
-    color: var(--primary-color);
-    font-size: 5rem;
-    font-weight: 800;
-    line-height: 5rem;
-    padding-bottom: 2rem;
+    font-size: 3rem;
   }
-  
+
   .paragraph {
-    text-align: center;
-    font-size: 1.2rem;
-    width: 24rem;
-    color: var(--text-color);
-    padding-bottom: 2rem;
+    width: 100%;
   }
-  
+
   .button {
-    color: var(--white);
-    background-color: var(--primary-color);
-    font-family: "Hoefler Text";
-    font-size: 1.2rem;
-    font-weight: 500;
-    border-style: none;
-    line-height: 0.5rem;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
-  
+
   .h_linebar {
-    width: 32rem;
+    width: 12.5rem;
     height: 1.2rem;
     bottom: -0.5rem;
     background-color: var(--primary-color);
   }
-  
+
   .service_container {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 6rem 0 10rem 0;
-    height: 37rem;
+    height: 100%;
+    margin: 0;
     background-color: var(--secondary-color);
   }
-  
+
   .slider_btn {
-    display: flex;
-    justify-content: center;
-    width: 18rem;
-    margin-right: 3rem;
+    display: none;
   }
-  
-  .slider_btn_left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    background-color: var(--primary-color);
-  }
-  
+
   .service {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  
+
   .service_subtitle {
     color: var(--white);
-    font-size: 4rem;
+    font-size: 2.2rem;
     font-weight: 800;
     line-height: 5rem;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-top: 8rem;
   }
-  
+
   .service_paragraph {
-    font-size: 1.2rem;
-    width: 24rem;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
     color: var(--white);
-    line-height: 2rem;
-    letter-spacing: 1px;
+    line-height: 1.2rem;
+    letter-spacing: 0.6px;
+    padding: 0 2rem 4rem;
   }
-  
-  .service_img {
-    position: absolute;
+
+  .slider_dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .slider_dot_left,
+  .slider_dot_center,
+  .slider_dot_right {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.3rem;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+
+  .active_dot {
+    background-color: var(--primary-color);
+  }
+
+  .service_content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .service_img_linebar_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .service_img_container {
+    width: 100%;
+    position: static;
+    bottom: 5rem;
     right: 0;
-    bottom: -5rem;
-    width: 37rem;
-    height: 24rem;
-    background-image: url("../images/services-service.png");
-    background-size: cover;
   }
-  
+
+  .image {
+    width: 100%;
+    height: 24rem;
+  }
+
+  .service_h_linebar {
+    transform: translateY(-0.5rem);
+    position: absolute;
+    left: calc(50% - 6.25rem);
+    width: 12.5rem;
+    height: 1.2rem;
+    background-color: var(--primary-color);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .contact_us_img {
+    width: 100%;
+    height: 33rem;
+  }
+
+  .contact_us {
+    margin-top: 1rem;
+  }
+
+  .title {
+    font-size: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .paragraph {
+    width: 60%;
+    padding-bottom: 3rem;
+  }
+
+  .button {
+    font-size: 1.4rem;
+  }
+
+  .h_linebar {
+    width: 60%;
+  }
+
+  .service_container {
+    margin: 6rem 0 0;
+  }
+
+  .slider_btn {
+    width: 5rem;
+    margin: 0 4rem;
+  }
+
+  .slider_btn_left {
+    width: 100%;
+  }
+
+  .service {
+    padding-left: 2rem;
+    width: 60%;
+    margin: 0;
+  }
+
+  .service_content {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .slider_dots {
+    display: none;
+  }
+
+  .service_paragraph {
+    width: 90%;
+    letter-spacing: 1.5px;
+  }
+
+  .service_img_linebar_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .service_img_container {
+    transform: translateY(-2rem);
+    position: static;
+    bottom: 5rem;
+    right: 0;
+  }
+
+  .image {
+    width: 50rem;
+    height: 31rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .service {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .service_paragraph {
+    width: 50%;
+  }
+}
