@@ -42,6 +42,7 @@ export const Slider = ({ styles, data }) => {
             const { id } = item;
             return (
               <div
+                key={id}
                 className={
                   slide === id
                     ? `${styles.slider_dot_center} ${styles.active_dot}`
