@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../images/defico-logo.png";
+import logo from "../../../images/defico-logo-large.png";
 import wsp from "../../../images/whatsapp.png";
 import { Navbar } from "./Navbar";
 import styles from "../../../styles/Header.module.css";
