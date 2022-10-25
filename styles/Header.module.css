@@ -10,7 +10,7 @@
 }
 
 .logo {
-  padding: 1rem 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .navbar {
@@ -66,6 +66,7 @@
 @media screen and (max-width: 767px) {
   .container {
     position: relative;
+    align-items: flex-start;
     padding: 1.8rem 2rem;
     box-shadow: none;
   }
